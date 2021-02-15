@@ -1,5 +1,5 @@
 {
-  "name": "react-components",
+  "name": "offshore-components",
   "version": "0.1.0",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -60,6 +60,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eliel-offshore/react-components.git#0"
+    "url": "git+https://github.com/eliel-offshore/offshore-components.git#0"
   }
 }
