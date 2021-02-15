@@ -60,6 +60,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/eliel-offshore/react-components.git"
+    "url": "git+https://github.com/eliel-offshore/react-components.git#0"
   }
 }
