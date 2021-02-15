@@ -8,7 +8,7 @@ export default function OffshoreTextField(props) {
         type = 'text', 
         variant = 'outlined',
         error = false,
-        classes = {},
+        classes = '',
         name,
         id,
         autoComplete = '',
@@ -29,8 +29,6 @@ export default function OffshoreTextField(props) {
             required={require}
             fullWidth
             id={id}
-            aria-label={label}
-            label={label}
             name={name}
             autoComplete={autoComplete}
             autoFocus={autoFocus}
@@ -43,8 +41,8 @@ export default function OffshoreTextField(props) {
 }
 
 OffshoreTextField.propTypes = {
-    name: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    id: PropTypes.string,
     label: PropTypes.string.isRequired,
     autoFocus: PropTypes.bool
 }
