@@ -2,9 +2,11 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 
-export default function OffshoreButton({ label, onClick, type = 'button', variant = 'contained', color = 'primary', classes = {}, disabled = false }) {
+export default function OffshoreButton(props) {
+  const { label, onClick, type = 'button', variant = 'contained', color = 'primary', classes = {}, disabled = false } = props
   return (
-    <Button 
+    <Button
+        {...props} 
         type={type}
         variant={variant}
         color={color}
