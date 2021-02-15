@@ -1,5 +1,5 @@
-import Button from '../stories/Button';
+import OffshoreButton from './Button';
 
 export { 
-    Button
+    OffshoreButton
 };
