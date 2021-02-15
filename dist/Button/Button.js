@@ -25,7 +25,7 @@ function OffshoreButton(props) {
       _props$color = props.color,
       color = _props$color === void 0 ? 'primary' : _props$color,
       _props$classes = props.classes,
-      classes = _props$classes === void 0 ? {} : _props$classes,
+      classes = _props$classes === void 0 ? '' : _props$classes,
       _props$disabled = props.disabled,
       disabled = _props$disabled === void 0 ? false : _props$disabled;
   return /*#__PURE__*/_react.default.createElement(_Button.default, _extends({}, props, {

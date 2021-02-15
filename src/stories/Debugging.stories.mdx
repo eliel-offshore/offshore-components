@@ -1,0 +1,107 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
+import chromeDebug from './assets/chrome-debug.PNG'
+import breakpoint from './assets/breakpoint.PNG'
+
+export const image = {
+  src: chromeDebug,
+  alt: 'chrome debug tool',
+};
+
+export const breakpointImg = {
+  src: breakpoint,
+  alt: 'breakpoint',
+};
+
+export const workspace = '${workspaceRoot}'
+
+<Meta title="Setup/Debugging" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    {/* letter-spacing: 6px; */}
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .code {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .code code {
+    margin: 1em 0;
+  }
+  
+`}</style>
+
+# Debugging
+
+<div className="subheading">Using VS Code</div>
+
+Download and install Chrome debugger
+Create a <code>launch.json</code> to configure VS Code debugger
+Annd put it inside <code>.vscode</code> in root 
+
+<Source 
+  language='css'
+  code={dedent`
+     {
+          "version": "0.2.0",
+          "configurations": [
+              {
+                  "name": "Chrome",
+                  "type": "chrome",
+                  "request": "launch",
+                  "url": "http://localhost:3000",
+                  "webRoot": "${workspace}/src"
+              }
+          ]
+      }
+  `}
+/>
+
+Go to debug mode
+
+Run <code>ctrl + shift + d</code>
+
+<img src={image.src} />
+
+Add a breakpoint into your vscode and start debugging.
+
+<img src={breakpointImg.src} />
+
+<div className="tip-wrapper">
+  <span className="tip">Note</span>Make sure your app is running.
+</div>

@@ -24,7 +24,7 @@ function OffshoreTextField(props) {
       _props$error = props.error,
       error = _props$error === void 0 ? false : _props$error,
       _props$classes = props.classes,
-      classes = _props$classes === void 0 ? {} : _props$classes,
+      classes = _props$classes === void 0 ? '' : _props$classes,
       name = props.name,
       id = props.id,
       _props$autoComplete = props.autoComplete,
@@ -49,8 +49,6 @@ function OffshoreTextField(props) {
     required: require,
     fullWidth: true,
     id: id,
-    "aria-label": label,
-    label: label,
     name: name,
     autoComplete: autoComplete,
     autoFocus: autoFocus,
@@ -62,8 +60,8 @@ function OffshoreTextField(props) {
 }
 
 OffshoreTextField.propTypes = {
-  name: _propTypes.default.string.isRequired,
-  id: _propTypes.default.string.isRequired,
+  name: _propTypes.default.string,
+  id: _propTypes.default.string,
   label: _propTypes.default.string.isRequired,
   autoFocus: _propTypes.default.bool
 };

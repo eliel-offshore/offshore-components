@@ -1,0 +1,301 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
+import chromeDebug from './assets/chrome-debug.PNG'
+import breakpoint from './assets/breakpoint.PNG'
+
+export const image = {
+  src: chromeDebug,
+  alt: 'chrome debug tool',
+};
+
+export const breakpointImg = {
+  src: breakpoint,
+  alt: 'breakpoint',
+};
+
+export const theme = (num) => '`' + '${theme.spacing('+ num +')}px !important' + '`'
+
+<Meta title="Setup/Theme Setup" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    {/* letter-spacing: 6px; */}
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .code {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .code code {
+    margin: 1em 0;
+  }
+  
+`}</style>
+
+# Material UI and Global Styles
+
+<div className="subheading">Material UI</div>
+
+Install material ui
+<code>npm install @material-ui/core</code>
+
+<div className="subheading">Load custom fonts</div>
+
+Add the code inside public folder  > <code>index.html</code>
+
+<Source 
+  language='html'
+  code={dedent`
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Roboto:300,400,500&display=swap"
+      rel="stylesheet"
+    />
+  `}
+/>
+
+<div className="subheading">SVG Icons</div>
+
+Install SVG icons
+<code>npm install @material-ui/icons</code>
+
+<div className="subheading">Global Styles</div>
+
+Create <code>GlobalStyles.js</code>
+<Source 
+  language='js'
+  code={dedent`
+    import { withStyles } from "@material-ui/core";
+    ${''}
+    const styles = theme => ({
+    "@global": {
+      /**
+      * Disable the focus outline, which is default on some browsers like
+      * chrome when focusing elements
+      */
+      "*:focus": {
+        outline: 0
+      },
+      ".text-white": {
+        color: theme.palette.common.white
+      },
+      ".listItemLeftPadding": {
+        paddingTop: ${theme(1.75)},
+        paddingBottom: ${theme(1.75)},
+        paddingLeft: ${theme(4)},
+        [theme.breakpoints.down("sm")]: {
+          paddingLeft: ${theme(4)}
+        },
+        "@media (max-width:  420px)": {
+          paddingLeft: ${theme(1)}
+        }
+      },
+      ".container": {
+        width: "100%",
+        paddingRight: theme.spacing(4),
+        paddingLeft: theme.spacing(4),
+        marginRight: "auto",
+        marginLeft: "auto",
+        [theme.breakpoints.up("sm")]: {
+          maxWidth: 540
+        },
+        [theme.breakpoints.up("md")]: {
+          maxWidth: 720
+        },
+        [theme.breakpoints.up("lg")]: {
+          maxWidth: 1170
+        }
+      },
+      ".row": {
+        display: "flex",
+        flexWrap: "wrap",
+        marginRight: -theme.spacing(2),
+        marginLeft: -theme.spacing(2)
+      },
+      ".container-fluid": {
+        width: "100%",
+        paddingRight: theme.spacing(2),
+        paddingLeft: theme.spacing(2),
+        marginRight: "auto",
+        marginLeft: "auto",
+        maxWidth: 1370
+      },
+      ".lg-mg-top": {
+        marginTop: ${theme(20)},
+        [theme.breakpoints.down("md")]: {
+          marginTop: ${theme(18)}
+        },
+        [theme.breakpoints.down("sm")]: {
+          marginTop: ${theme(16)}
+        },
+        [theme.breakpoints.down("xs")]: {
+          marginTop: ${theme(14)}
+        }
+      },
+      ".lg-mg-bottom": {
+        marginBottom: ${theme(20)},
+        [theme.breakpoints.down("md")]: {
+          marginBottom: ${theme(18)}
+        },
+        [theme.breakpoints.down("sm")]: {
+          marginBottom: ${theme(16)}
+        },
+        [theme.breakpoints.down("xs")]: {
+          marginBottom: ${theme(14)}
+        }
+      },
+      ".lg-p-top": {
+        paddingTop: ${theme(20)},
+        [theme.breakpoints.down("md")]: {
+          paddingTop: ${theme(18)}
+        },
+        [theme.breakpoints.down("sm")]: {
+          paddingTop: ${theme(16)}
+        },
+        [theme.breakpoints.down("xs")]: {
+          paddingTop: ${theme(14)}
+        }
+      }
+    }
+  });
+  ${''}
+  function globalStyles() {
+    return null;
+  }
+  ${''}
+  export default withStyles(styles, { withTheme: true })(globalStyles)
+  `}
+/>
+
+Create <code>theme.js</code>
+<Source 
+  language='js'
+  code={dedent`
+     export const theme = responsiveFontSizes(createMuiTheme({
+    //Override style
+    palette: {
+      primary: {
+        light: '#c14432',
+        main: '#8a0a0a',
+        dark: '#570000',
+        contrastText: white,
+      },
+      secondary: {
+        light: '#65baff',
+        main: '#018bf0',
+        dark: '#005fbd',
+        contrastText: white,
+      },
+      button: {
+        light: '#65baff',
+        main: '#018bf0',
+        dark: '#005fbd',
+        contrastText: white,
+      },
+      error: {
+        light: "#e57373",
+        main: "#f44336",
+        dark: "#d32f2f",
+        contrastText: white,
+      },
+      warning: {
+        light: "#ffb74d",
+        main: "#ff9800",
+        dark: "#f57c00",
+        contrastText: gray,
+      },
+      info: {
+        light: "#64b5f6",
+        main: "#2196f3",
+        dark: "#1976d2",
+        contrastText: white,
+      },
+      success: {
+        light: "#81c784",
+        main: "#4caf50",
+        dark: "#388e3c",
+        contrastText: gray,
+      },
+      pdf: {
+        light: "#ff5b3e",
+        main: "#df1912",
+        dark: "#a40000",
+        contrastText: '#ffffff',
+      },
+      starred: {
+        light: "#ffe26c",
+        main: "#fbb03b",
+        dark: "#c38100",
+        contrastText: '#000000',
+      },
+      divider: 'rgba(0, 0, 0, 0.05)',
+    },
+    //Customized style
+    root: {
+      flexGrow: 1,
+      display: 'flex',
+    },
+    avatar: {
+      left: 0,
+      righ: 0,
+      margin: 'auto'
+    },
+    getPaperTheme: (t) => ({
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        textDecoration: 'none',
+        borderRadius: '0px',
+        backgroundColor: theme.palette.background.paper
+    }),
+    createThemeTransition: (t, prop) => {
+      return t.transitions.create(prop, {
+        easing: t.transitions.easing.sharp,
+        duration: t.transitions.duration.enteringScreen,
+      })
+    },
+    drawerWidth: 240,
+    categoryDropdown: {
+      minWidth: 265
+    },
+    geDialogContent: (t) => ({
+      minHeight: 'inherit',
+      minWidth: 'inherit',
+    }),
+  }));
+  `}
+/>
+

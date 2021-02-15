@@ -1,0 +1,121 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
+import chromeDebug from './assets/chrome-debug.PNG'
+import breakpoint from './assets/breakpoint.PNG'
+
+export const image = {
+  src: chromeDebug,
+  alt: 'chrome debug tool',
+};
+
+export const breakpointImg = {
+  src: breakpoint,
+  alt: 'breakpoint',
+};
+
+export const workspace = '${workspaceRoot}'
+
+<Meta title="Setup/Server" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    {/* letter-spacing: 6px; */}
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .code {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .code code {
+    margin: 1em 0;
+  }
+  
+`}</style>
+
+# Mock API Setup
+
+<div className="subheading">Creatinng a simple Token API</div>
+
+Install express
+
+<code>npm install --save-dev express cors</code>
+
+Create a file <code>server.js</code>
+
+<Source 
+  language='js'
+  code={dedent`
+      const express = require('express');
+      const cors = require('cors')
+      const app = express();
+      ${''}
+      app.use(cors());
+      ${''}
+      app.use('/login', (req, res) => {
+        res.send({
+          token: 'test123'
+        });
+      });
+      ${''}
+      app.listen(8080, () => console.log('API is running on http://localhost:8080/login'));
+  `}
+/>
+
+Run the server
+
+<code>node server.js</code>
+
+<Source 
+  language='js'
+  code={dedent`
+      Output
+      API is running on http://localhost:8080/login
+  `}
+/>
+
+Visit <code>http://localhost:8080/login</code> and you’ll find your JSON object.
+
+<Source 
+  language='json'
+  code={dedent`
+      {"token":"test123"}
+  `}
+/>
+
+<div className="tip-wrapper">
+  <span className="tip">Note</span>Make sure the server is running.
+</div>

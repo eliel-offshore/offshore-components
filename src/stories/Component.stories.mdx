@@ -1,0 +1,208 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
+
+export const workspace = '${workspaceRoot}'
+
+<Meta title="Setup/Component" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    {/* letter-spacing: 6px; */}
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .code {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .code code {
+    margin: 1em 0;
+  }
+  
+`}</style>
+
+# Setup
+
+<div className="subheading">New Component</div>
+
+Create a <code>SignIn.js</code> component
+
+<Source 
+  language='js'
+  code={dedent`
+      import React, { useState, useEffect } from 'react';
+      import PropTypes from 'prop-types';
+      import Avatar from '@material-ui/core/Avatar';
+      import CssBaseline from '@material-ui/core/CssBaseline';
+      import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+      import Typography from '@material-ui/core/Typography';
+      import { makeStyles } from '@material-ui/core/styles';
+      import Container from '@material-ui/core/Container';
+      import OffshoreButton from '../Button'
+      import OffshoreTextField from '../TextField'
+      ${''}
+      const useStyles = makeStyles((theme) => ({
+        paper: {
+          marginTop: theme.spacing(8),
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        },
+        avatar: {
+          margin: theme.spacing(1),
+          backgroundColor: theme.palette.secondary.main,
+        },
+        form: {
+          width: '100%', // Fix IE 11 issue.
+          marginTop: theme.spacing(1),
+        },
+        submit: {
+          margin: theme.spacing(3, 0, 2),
+        },
+      }));
+      ${''}
+      export default function OffshoreSignIn() {
+        const classes = useStyles();
+        ${''}
+        return (
+          <Container component="main" maxWidth="xs">
+            <CssBaseline />
+            <div className={classes.paper}>
+              <Avatar className={classes.avatar}>
+                <LockOutlinedIcon />
+              </Avatar>
+              <Typography component="h1" variant="h5">
+                Sign in
+              </Typography>
+              <form className={classes.form} noValidate>
+                <OffshoreTextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                  autoFocus
+                />
+                <OffshoreTextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+                <OffshoreButton
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                >
+                  Submit
+                </OffshoreButton>
+              </form>
+            </div>
+          </Container>
+        );
+      }
+  `
+  }
+/>
+
+<div className="subheading">App component</div>
+
+<Source 
+  language='js'
+  code={dedent`
+    import './App.css';
+    import { OffshoreSignIn } from 'offshore-components'
+    ${''}
+    function App() {
+      return (
+        <OffshoreSignIn />
+      );
+    }
+    ${''}
+    export default App;
+  `}
+/>
+
+<div className="subheading">Adding a story</div>
+
+Create a file <code>SignIn.stories.js</code>
+
+<Source 
+  language='js'
+  code={dedent`
+    import React from 'react'
+    import { OffshoreSignIn } from 'offshore-components'
+    ${''}
+    export default {
+        title: 'Components/OffshoreSignIn',
+        component: OffshoreSignIn,
+    }
+    ${''}
+    export const Default = () => <OffshoreSignIn  />;
+  `}
+/>
+
+<div className="subheading">Adding a unit test</div>
+
+Create a file <code>SignIn.test.js</code>
+
+<Source 
+  language='js'
+  code={dedent`
+    import React from 'react';
+    import { render, fireEvent, screen } from '@testing-library/react';
+    import { Default } from './SignIn.stories' 
+    ${''}
+    it('renders a sign in component', () => {
+        const { getByText, getByLabelText } = render(<Default />);
+        ${''}
+        getByLabelText('Email Address')
+        getByLabelText('Password')
+        getByText('Sign in')
+    });
+  `}
+/>
+
