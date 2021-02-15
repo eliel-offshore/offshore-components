@@ -1,5 +1,5 @@
 {
-  "name": "react-components",
+  "name": "@eliel-offshore/react-components",
   "version": "0.1.0",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -15,7 +15,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf dist",
-    "compile": "npm run clean && cross-env NODE_ENV=production babel src/stories --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
   },
   "eslintConfig": {
     "extends": [
