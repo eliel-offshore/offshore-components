@@ -1,409 +1,834 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Example/Button Large 1`] = `
-<button
-  className="storybook-button storybook-button--large storybook-button--secondary"
-  style={null}
-  type="button"
->
-  Button
-</button>
-`;
-
-exports[`Storyshots Example/Button Primary 1`] = `
-<button
-  className="storybook-button storybook-button--medium storybook-button--primary"
-  style={null}
-  type="button"
->
-  Button
-</button>
-`;
-
-exports[`Storyshots Example/Button Secondary 1`] = `
-<button
-  className="storybook-button storybook-button--medium storybook-button--secondary"
-  style={null}
-  type="button"
->
-  Button
-</button>
-`;
-
-exports[`Storyshots Example/Button Small 1`] = `
-<button
-  className="storybook-button storybook-button--small storybook-button--secondary"
-  style={null}
-  type="button"
->
-  Button
-</button>
-`;
-
-exports[`Storyshots Example/Header Logged In 1`] = `
-<header>
-  <div
-    className="wrapper"
+exports[`Storyshots Components/CustomThemeProvider Theme Switcher 1`] = `
+<div>
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-appBar-27 mui-fixed MuiPaper-elevation4"
   >
-    <div>
-      <svg
-        height="32"
-        viewBox="0 0 32 32"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          fill="none"
-          fillRule="evenodd"
-        >
-          <path
-            d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-            fill="#FFF"
-          />
-          <path
-            d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-            fill="#555AB9"
-          />
-          <path
-            d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-            fill="#91BAF8"
-          />
-        </g>
-      </svg>
-      <h1>
-        Acme
-      </h1>
-    </div>
-    <div>
-      <button
-        className="storybook-button storybook-button--small storybook-button--secondary"
-        style={null}
-        type="button"
-      >
-        Log out
-      </button>
-    </div>
-  </div>
-</header>
-`;
-
-exports[`Storyshots Example/Header Logged Out 1`] = `
-<header>
-  <div
-    className="wrapper"
-  >
-    <div>
-      <svg
-        height="32"
-        viewBox="0 0 32 32"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          fill="none"
-          fillRule="evenodd"
-        >
-          <path
-            d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-            fill="#FFF"
-          />
-          <path
-            d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-            fill="#555AB9"
-          />
-          <path
-            d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-            fill="#91BAF8"
-          />
-        </g>
-      </svg>
-      <h1>
-        Acme
-      </h1>
-    </div>
-    <div>
-      <button
-        className="storybook-button storybook-button--small storybook-button--secondary"
-        style={null}
-        type="button"
-      >
-        Log in
-      </button>
-      <button
-        className="storybook-button storybook-button--small storybook-button--primary"
-        style={null}
-        type="button"
-      >
-        Sign up
-      </button>
-    </div>
-  </div>
-</header>
-`;
-
-exports[`Storyshots Example/Page Logged In 1`] = `
-<article>
-  <header>
     <div
-      className="wrapper"
+      className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
-      <div>
-        <svg
-          height="32"
-          viewBox="0 0 32 32"
-          width="32"
-          xmlns="http://www.w3.org/2000/svg"
+      <h6
+        className="MuiTypography-root makeStyles-title-28 MuiTypography-h6"
+      >
+        Theme Switcher
+      </h6>
+      <label
+        className="MuiFormControlLabel-root"
+      >
+        <span
+          className="MuiSwitch-root"
         >
-          <g
-            fill="none"
-            fillRule="evenodd"
+          <span
+            aria-disabled={false}
+            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-33 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+            onBlur={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={null}
           >
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>
-          Acme
-        </h1>
-      </div>
-      <div>
-        <button
-          className="storybook-button storybook-button--small storybook-button--secondary"
-          style={null}
-          type="button"
+            <span
+              className="MuiIconButton-label"
+            >
+              <input
+                checked={false}
+                className="PrivateSwitchBase-input-36 MuiSwitch-input"
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <span
+                className="MuiSwitch-thumb"
+              />
+            </span>
+          </span>
+          <span
+            className="MuiSwitch-track"
+          />
+        </span>
+        <span
+          className="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
         >
-          Log out
-        </button>
-      </div>
+          Theme
+        </span>
+      </label>
     </div>
   </header>
-  <section>
-    <h2>
-      Pages in Storybook
-    </h2>
-    <p>
-      We recommend building UIs with a
-       
-      <a
-        href="https://componentdriven.org"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <strong>
-          component-driven
-        </strong>
-      </a>
-       
-      process starting with atomic components and ending with pages.
-    </p>
-    <p>
-      Render pages with mock data. This makes it easy to build and review page states without needing to navigate to them in your app. Here are some handy patterns for managing page data in Storybook:
-    </p>
-    <ul>
-      <li>
-        Use a higher-level connected component. Storybook helps you compose such data from the "args" of child component stories
-      </li>
-      <li>
-        Assemble data in the page component from your services. You can mock these services out using Storybook.
-      </li>
-    </ul>
-    <p>
-      Get a guided tutorial on component-driven development at
-       
-      <a
-        href="https://www.learnstorybook.com"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Learn Storybook
-      </a>
-      . Read more in the
-       
-      <a
-        href="https://storybook.js.org/docs"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        docs
-      </a>
-      .
-    </p>
-    <div
-      className="tip-wrapper"
-    >
-      <span
-        className="tip"
-      >
-        Tip
-      </span>
-       Adjust the width of the canvas with the
-       
-      <svg
-        height="10"
-        viewBox="0 0 12 12"
-        width="10"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          fill="none"
-          fillRule="evenodd"
-        >
-          <path
-            d="M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z"
-            fill="#999"
-            id="a"
-          />
-        </g>
-      </svg>
-      Viewports addon in the toolbar
-    </div>
-  </section>
-</article>
+</div>
 `;
 
-exports[`Storyshots Example/Page Logged Out 1`] = `
-<article>
-  <header>
+exports[`Storyshots Components/OffshoreSignIn Error State 1`] = `
+<main
+  className="MuiContainer-root MuiContainer-maxWidthXs"
+>
+  <div
+    className="makeStyles-paper-18"
+  >
     <div
-      className="wrapper"
+      className="MuiAvatar-root MuiAvatar-circle makeStyles-avatar-19 MuiAvatar-colorDefault"
     >
-      <div>
-        <svg
-          height="32"
-          viewBox="0 0 32 32"
-          width="32"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            fill="none"
-            fillRule="evenodd"
-          >
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>
-          Acme
-        </h1>
-      </div>
-      <div>
-        <button
-          className="storybook-button storybook-button--small storybook-button--secondary"
-          style={null}
-          type="button"
-        >
-          Log in
-        </button>
-        <button
-          className="storybook-button storybook-button--small storybook-button--primary"
-          style={null}
-          type="button"
-        >
-          Sign up
-        </button>
-      </div>
-    </div>
-  </header>
-  <section>
-    <h2>
-      Pages in Storybook
-    </h2>
-    <p>
-      We recommend building UIs with a
-       
-      <a
-        href="https://componentdriven.org"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <strong>
-          component-driven
-        </strong>
-      </a>
-       
-      process starting with atomic components and ending with pages.
-    </p>
-    <p>
-      Render pages with mock data. This makes it easy to build and review page states without needing to navigate to them in your app. Here are some handy patterns for managing page data in Storybook:
-    </p>
-    <ul>
-      <li>
-        Use a higher-level connected component. Storybook helps you compose such data from the "args" of child component stories
-      </li>
-      <li>
-        Assemble data in the page component from your services. You can mock these services out using Storybook.
-      </li>
-    </ul>
-    <p>
-      Get a guided tutorial on component-driven development at
-       
-      <a
-        href="https://www.learnstorybook.com"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Learn Storybook
-      </a>
-      . Read more in the
-       
-      <a
-        href="https://storybook.js.org/docs"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        docs
-      </a>
-      .
-    </p>
-    <div
-      className="tip-wrapper"
-    >
-      <span
-        className="tip"
-      >
-        Tip
-      </span>
-       Adjust the width of the canvas with the
-       
       <svg
-        height="10"
-        viewBox="0 0 12 12"
-        width="10"
-        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
       >
-        <g
-          fill="none"
-          fillRule="evenodd"
-        >
-          <path
-            d="M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z"
-            fill="#999"
-            id="a"
-          />
-        </g>
+        <path
+          d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
+        />
       </svg>
-      Viewports addon in the toolbar
     </div>
-  </section>
-</article>
+    <h1
+      className="MuiTypography-root MuiTypography-h5"
+    >
+      Sign in
+    </h1>
+    <form
+      className="makeStyles-form-20"
+      noValidate={true}
+    >
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-filled"
+          data-shrink={true}
+          htmlFor="email"
+          id="email-label"
+        >
+          Email Address
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="email"
+            autoFocus={true}
+            className="MuiInputBase-input MuiOutlinedInput-input"
+            data-testid="email-input"
+            disabled={false}
+            id="email"
+            name="email"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+            value="test"
+          />
+          <fieldset
+            aria-hidden={true}
+            className="PrivateNotchedOutline-root-22 MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="PrivateNotchedOutline-legendLabelled-24 PrivateNotchedOutline-legendNotched-25"
+            >
+              <span>
+                Email Address
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+          data-shrink={false}
+          htmlFor="password"
+          id="password-label"
+        >
+          Password
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="current-password"
+            autoFocus={false}
+            className="MuiInputBase-input MuiOutlinedInput-input"
+            data-testid="password-input"
+            disabled={false}
+            id="password"
+            name="password"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="password"
+            value=""
+          />
+          <fieldset
+            aria-hidden={true}
+            className="PrivateNotchedOutline-root-22 MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="PrivateNotchedOutline-legendLabelled-24"
+            >
+              <span>
+                Password
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"
+        disabled={false}
+        label="Submit"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="submit"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Submit
+        </span>
+      </button>
+    </form>
+  </div>
+</main>
+`;
+
+exports[`Storyshots Components/OffshoreSignIn Initial State 1`] = `
+<main
+  className="MuiContainer-root MuiContainer-maxWidthXs"
+>
+  <div
+    className="makeStyles-paper-10"
+  >
+    <div
+      className="MuiAvatar-root MuiAvatar-circle makeStyles-avatar-11 MuiAvatar-colorDefault"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
+        />
+      </svg>
+    </div>
+    <h1
+      className="MuiTypography-root MuiTypography-h5"
+    >
+      Sign in
+    </h1>
+    <form
+      className="makeStyles-form-12"
+      noValidate={true}
+    >
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+          data-shrink={false}
+          htmlFor="email"
+          id="email-label"
+        >
+          Email Address
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="email"
+            autoFocus={true}
+            className="MuiInputBase-input MuiOutlinedInput-input"
+            data-testid="email-input"
+            disabled={false}
+            id="email"
+            name="email"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+            value=""
+          />
+          <fieldset
+            aria-hidden={true}
+            className="PrivateNotchedOutline-root-14 MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="PrivateNotchedOutline-legendLabelled-16"
+            >
+              <span>
+                Email Address
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+      <div
+        className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+          data-shrink={false}
+          htmlFor="password"
+          id="password-label"
+        >
+          Password
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="current-password"
+            autoFocus={false}
+            className="MuiInputBase-input MuiOutlinedInput-input"
+            data-testid="password-input"
+            disabled={false}
+            id="password"
+            name="password"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="password"
+            value=""
+          />
+          <fieldset
+            aria-hidden={true}
+            className="PrivateNotchedOutline-root-14 MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="PrivateNotchedOutline-legendLabelled-16"
+            >
+              <span>
+                Password
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"
+        disabled={false}
+        label="Submit"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="submit"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Submit
+        </span>
+      </button>
+    </form>
+  </div>
+</main>
+`;
+
+exports[`Storyshots Components/Orders Default 1`] = `
+Array [
+  <h2
+    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+  >
+    Recent Orders
+  </h2>,
+  <table
+    className="MuiTable-root"
+    role={null}
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Date
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Ship To
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Payment Method
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Sale Amount
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    />
+  </table>,
+  <div
+    className="makeStyles-seeMore-1"
+  >
+    <a
+      className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+      href="#"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      See more orders
+    </a>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components/Orders Invalid Amount 1`] = `
+Array [
+  <h2
+    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+  >
+    Recent Orders
+  </h2>,
+  <table
+    className="MuiTable-root"
+    role={null}
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Date
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Ship To
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Payment Method
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Sale Amount
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    />
+  </table>,
+  <div
+    className="makeStyles-seeMore-7"
+  >
+    <a
+      className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+      href="#"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      See more orders
+    </a>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components/Orders Negative Amount 1`] = `
+Array [
+  <h2
+    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+  >
+    Recent Orders
+  </h2>,
+  <table
+    className="MuiTable-root"
+    role={null}
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Date
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Ship To
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Payment Method
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Sale Amount
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    />
+  </table>,
+  <div
+    className="makeStyles-seeMore-4"
+  >
+    <a
+      className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+      href="#"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      See more orders
+    </a>
+  </div>,
+]
+`;
+
+exports[`Storyshots UI/OffshoreButton Default 1`] = `
+<button
+  className="MuiButtonBase-root MuiButton-root MuiButton-contained"
+  disabled={false}
+  onBlur={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span
+    className="MuiButton-label"
+  >
+    Default
+  </span>
+</button>
+`;
+
+exports[`Storyshots UI/OffshoreButton Disabled 1`] = `
+<button
+  className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+  disabled={true}
+  onBlur={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={-1}
+  type="button"
+>
+  <span
+    className="MuiButton-label"
+  >
+    Disabled
+  </span>
+</button>
+`;
+
+exports[`Storyshots UI/OffshoreButton Primary 1`] = `
+<button
+  className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+  disabled={false}
+  onBlur={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span
+    className="MuiButton-label"
+  >
+    Primary
+  </span>
+</button>
+`;
+
+exports[`Storyshots UI/OffshoreButton Secondary 1`] = `
+<button
+  className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+  disabled={false}
+  onBlur={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span
+    className="MuiButton-label"
+  >
+    Secondary
+  </span>
+</button>
+`;
+
+exports[`Storyshots UI/OffshoreTextField Default 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+>
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+    data-shrink={false}
+  >
+    Default
+  </label>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoComplete=""
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      type="text"
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-37 MuiOutlinedInput-notchedOutline"
+    >
+      <legend
+        className="PrivateNotchedOutline-legendLabelled-39"
+      >
+        <span>
+          Default
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI/OffshoreTextField Disabled 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+>
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-disabled Mui-disabled"
+    data-shrink={false}
+  >
+    Disabled
+  </label>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      autoComplete=""
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input Mui-disabled Mui-disabled"
+      disabled={true}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      type="text"
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-45 MuiOutlinedInput-notchedOutline"
+    >
+      <legend
+        className="PrivateNotchedOutline-legendLabelled-47"
+      >
+        <span>
+          Disabled
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UI/OffshoreTextField Error 1`] = `
+<div
+  className="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth"
+>
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined Mui-error Mui-error MuiFormLabel-filled"
+    data-shrink={true}
+  >
+    Error
+  </label>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={true}
+      autoComplete=""
+      autoFocus={false}
+      className="MuiInputBase-input MuiOutlinedInput-input"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      type="text"
+      value="test"
+    />
+    <fieldset
+      aria-hidden={true}
+      className="PrivateNotchedOutline-root-41 MuiOutlinedInput-notchedOutline"
+    >
+      <legend
+        className="PrivateNotchedOutline-legendLabelled-43 PrivateNotchedOutline-legendNotched-44"
+      >
+        <span>
+          Error
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+</div>
 `;

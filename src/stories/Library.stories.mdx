@@ -1,0 +1,278 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+import dedent from 'ts-dedent';
+import chromeDebug from './assets/chrome-debug.PNG'
+import breakpoint from './assets/breakpoint.PNG'
+
+export const image = {
+  src: chromeDebug,
+  alt: 'chrome debug tool',
+};
+
+export const breakpointImg = {
+  src: breakpoint,
+  alt: 'breakpoint',
+};
+
+export const workspace = '${workspaceRoot}'
+
+export const pwd = '${PWD}'
+
+<Meta title="Setup/Library Setup" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    {/* letter-spacing: 6px; */}
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .code {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .code code {
+    margin: 1em 0;
+  }
+  
+`}</style>
+
+# Component Library
+
+<div className="subheading">Setup</div>
+
+Repeat Steps from Getting Started
+
+<div className="subheading">Material UI</div>
+
+Install material ui as dev dependencies
+<code>npm install @material-ui/core --save-dev</code>
+
+<div className="subheading">SVG Icons</div>
+
+Install SVG icons as dev dependencies
+
+<code>npm install @material-ui/icons --save-dev</code>
+
+<div className="subheading">React update</div>
+
+After installation delete all files under <code>/src</code>
+
+Create a <code>src/components</code> folder add an <code>index.js</code>
+
+<Source 
+  language='js'
+  code={dedent`
+    import OffshoreButton from './Button';
+    import OffshoreTextField from './TextField'
+    import OffshoreSignIn from './SignIn'
+    ${''}
+    export { 
+        OffshoreButton,
+        OffshoreTextField,
+        OffshoreSignIn
+    };
+  `}
+/>
+
+Install additional dev dependencies:
+
+<code>
+  npm i cross-env @babel/cli @babel/preset-env @babel/preset-react --save-dev
+</code>
+
+Enable preset-env and preset-react by adding a <code>babel.config.js</code>
+
+<Source 
+  language='json'
+  code={dedent`
+    // babel.config.js
+    module.exports = function (api) {
+        api.cache(true);
+        ${''}
+        const presets = [ "@babel/preset-env", "@babel/preset-react" ];
+        ${''}
+        return {
+          presets
+        };
+    }
+  `}
+/>
+
+Move React dependencies to dev dependencies to avoid conflict with main react app.
+
+<Source 
+  language='json'
+  code={dedent`
+     // package.json
+    "devDependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-scripts": "4.0.2"
+        ...
+    }
+  `}
+/>
+
+To prepare for publishing, In package.json add:
+
+<Source 
+  language='json'
+  code={dedent`
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/eliel-offshore/offshore-components.git#0"
+    }
+  `}
+/>
+
+Add a compile script:
+
+<Source 
+  language='json'
+  code={dedent`
+    "clean": "rimraf dist",
+    "compile": "cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
+  `}
+/>
+
+Build the pacakge with:
+
+<code>npm run compile</code>
+
+<div className="tip-wrapper">
+  <span className="tip">Note</span>Before publishing you must be login with your npm account to login run <code>npm login</code>
+</div>
+
+Publish to npm:
+
+<code>npm publish</code>
+
+After successful publishing install the package on react app
+
+<code>npm i offshore-components</code>
+
+<div className="tip-wrapper">
+  <span className="tip">Note</span>Everytime there is an update increment the package version of the libary and main app (should be the same version).
+</div>
+
+<div className="subheading">Publishing to local npm packager</div>
+
+Go to our component library and login to our local npm packager
+
+<code>npm login --registry=http://localhost:8395/repository/npm-private/</code>
+
+After successful login publish the component library
+
+<code>npm publish</code>
+
+Login to <code>http://localhost:8395/</code> and check if the package is published
+
+<div className="subheading">Using local npm packager</div>
+
+In the main app add <code>.npmrc</code> file
+
+<Source 
+  language='json'
+  code={dedent`
+    // .npmrc
+    registry=http://localhost:8395/repository/npm-group/
+  `}
+/>
+
+Install <code>cross-env</code> and update the <code>package.json</code>
+
+<Source 
+  language='json'
+  code={dedent`
+    // install cross-env
+    npm install cross-env --save-dev
+    ${''}
+     // package.json
+    "scripts": {
+      "start": "cross-env NODE_ENV=production react-scripts start",
+      "start:local": "cross-env NODE_ENV=local react-scripts start",
+      "create-link": "create-link.sh",
+      "postinstall": "node -e \"process.env.NODE_ENV != 'production' && process.exit(1)\" || npm run create-link"
+      ...
+    }
+  `}
+/>
+
+Create a .sh file <code>create-link.sh</code>
+
+<Source 
+  language='bash'
+  code={dedent`
+    // create-link.sh
+    #!/bin/bash
+    $(readlink -f $(npm root -g)/offshore-components) == ${pwd} || npm link ../react-components
+  `}
+/>
+
+Install component library <code>npm install offshore-components</code>
+
+And start it with <code>npm run start:local</code> and in the component library <code>npm run compile</code> if have changes.
+
+<div className="subheading">Using the library Locally with NPM Link (if no local npm installed)</div>
+
+Update <code>package.json</code> and move <code>react</code> and <code>react-dom</code> to peerDependencies and run <code>npm install</code>
+
+<Source 
+  language='json'
+  code={dedent`
+     // package.json
+    "peerDependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    }
+  `}
+/>
+
+Link the library
+
+<code>npm link</code>
+
+Since we remove <code>react</code> and <code>react-dom</code> from dev dependencies we need to use <code>react</code> and <code>react-dom</code> of our main app to run storybook.
+
+<code>npm link "../../MY-APP/node_modules/react"</code>
+<br /><br />
+<code>npm link "../../MY-APP/node_modules/react-dom"</code>
+
+<div className="tip-wrapper">
+  <span className="tip">Note</span><br /><br />
+  Everytime we do an update from the library we need to run <code>npm run compile</code>. 
+  <br />
+  And re-run the main app to see the changes we made.
+</div>

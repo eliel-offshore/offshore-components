@@ -2,7 +2,7 @@ import React from 'react'
 import OffshoreTextField from './TextField'
 
 export default {
-    title: 'Components/OffshoreTextField'
+    title: 'UI/OffshoreTextField'
 }
 
 export const Default = args => <OffshoreTextField {...args}  />;
@@ -22,4 +22,3 @@ Disabled.args = {
     label: 'Disabled',
     disabled: true
 }
-

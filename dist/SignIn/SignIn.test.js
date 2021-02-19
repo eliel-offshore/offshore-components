@@ -48,8 +48,8 @@ it('should not have an error for valid email and password', function () {
 
   var passwordError = _react2.screen.queryByText('Password is required.');
 
-  expect(emailError).not.toBeInTheDocument();
-  expect(passwordError).not.toBeInTheDocument();
+  expect(emailError).toBe(null);
+  expect(passwordError).toBe(null);
 });
 it('should have an error for invalid email and no password input', function () {
   var _render3 = (0, _react2.render)( /*#__PURE__*/_react.default.createElement(_SignIn.Default, null)),

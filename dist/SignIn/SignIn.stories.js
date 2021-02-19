@@ -9,6 +9,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _SignIn = _interopRequireDefault(require("./SignIn"));
 
+var _storybookAddonDesigns = require("storybook-addon-designs");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -17,7 +19,8 @@ var _default = {
     onClick: {
       action: 'clicked'
     }
-  }
+  },
+  decorators: [_storybookAddonDesigns.withDesign]
 };
 exports.default = _default;
 
@@ -26,6 +29,13 @@ var Default = function Default() {
 };
 
 exports.Default = Default;
+Default.parameters = {
+  jest: ['SignIn.test.js'],
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File'
+  }
+};
 Default.storyName = 'Initial State';
 
 var ErrorState = function ErrorState() {

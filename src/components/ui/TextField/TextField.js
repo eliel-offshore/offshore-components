@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 
 export default function OffshoreTextField(props) {
+
     const { 
         label, 
         type = 'text', 
@@ -18,6 +19,7 @@ export default function OffshoreTextField(props) {
         helperText = null,
         onChange, 
         disabled = false } = props
+
 
     return (
         <TextField
@@ -37,7 +39,7 @@ export default function OffshoreTextField(props) {
             onChange={onChange}
             disabled={disabled}
         />
-  );
+    )
 }
 
 OffshoreTextField.propTypes = {

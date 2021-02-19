@@ -9,8 +9,6 @@ exports.default = OffshoreSignIn;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _Avatar = _interopRequireDefault(require("@material-ui/core/Avatar"));
 
 var _CssBaseline = _interopRequireDefault(require("@material-ui/core/CssBaseline"));
@@ -23,9 +21,7 @@ var _styles = require("@material-ui/core/styles");
 
 var _Container = _interopRequireDefault(require("@material-ui/core/Container"));
 
-var _Button = _interopRequireDefault(require("../Button"));
-
-var _TextField = _interopRequireDefault(require("../TextField"));
+var _ui = require("../ui");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -50,40 +46,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function loginUser(_x) {
-  return _loginUser.apply(this, arguments);
-}
-
-function _loginUser() {
-  _loginUser = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(credentials) {
-    return regeneratorRuntime.wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            return _context2.abrupt("return", fetch('http://localhost:8080/login', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(credentials)
-            }).then(function (data) {
-              return data.json();
-            }));
-
-          case 1:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2);
-  }));
-  return _loginUser.apply(this, arguments);
-}
 
 var useStyles = (0, _styles.makeStyles)(function (theme) {
   return {
@@ -113,8 +75,7 @@ var initialValue = {
 };
 
 function OffshoreSignIn(_ref) {
-  var setToken = _ref.setToken,
-      _ref$initialState = _ref.initialState,
+  var _ref$initialState = _ref.initialState,
       initialState = _ref$initialState === void 0 ? initialValue : _ref$initialState;
   var classes = useStyles();
 
@@ -162,39 +123,16 @@ function OffshoreSignIn(_ref) {
     }
   }, [values]);
 
-  var handleSubmit = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(event) {
-      var isValidEmail, isValidPassword;
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              if (event) event.preventDefault();
-              isValidEmail = validateEmail(values.email);
-              isValidPassword = values.password !== '';
-              setErrors({
-                email: isValidEmail,
-                password: isValidPassword
-              });
-              setIsSubmitting(true); // if (isValidEmail && isValidPassword) {
-              //   const token = await loginUser({
-              //     values
-              //   });
-              //   setToken && setToken(token);
-              // }
-
-            case 5:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }));
-
-    return function handleSubmit(_x2) {
-      return _ref2.apply(this, arguments);
-    };
-  }();
+  var handleSubmit = function handleSubmit(event) {
+    if (event) event.preventDefault();
+    var isValidEmail = validateEmail(values.email);
+    var isValidPassword = values.password !== '';
+    setErrors({
+      email: isValidEmail,
+      password: isValidPassword
+    });
+    setIsSubmitting(true);
+  };
 
   return /*#__PURE__*/_react.default.createElement(_Container.default, {
     component: "main",
@@ -209,7 +147,7 @@ function OffshoreSignIn(_ref) {
   }, "Sign in"), /*#__PURE__*/_react.default.createElement("form", {
     className: classes.form,
     noValidate: true
-  }, /*#__PURE__*/_react.default.createElement(_TextField.default, {
+  }, /*#__PURE__*/_react.default.createElement(_ui.OffshoreTextField, {
     variant: "outlined",
     margin: "normal",
     required: true,
@@ -226,7 +164,7 @@ function OffshoreSignIn(_ref) {
     inputProps: {
       "data-testid": "email-input"
     }
-  }), /*#__PURE__*/_react.default.createElement(_TextField.default, {
+  }), /*#__PURE__*/_react.default.createElement(_ui.OffshoreTextField, {
     variant: "outlined",
     margin: "normal",
     required: true,
@@ -243,7 +181,7 @@ function OffshoreSignIn(_ref) {
     inputProps: {
       "data-testid": "password-input"
     }
-  }), /*#__PURE__*/_react.default.createElement(_Button.default, {
+  }), /*#__PURE__*/_react.default.createElement(_ui.OffshoreButton, {
     type: "submit",
     fullWidth: true,
     variant: "contained",
@@ -251,7 +189,5 @@ function OffshoreSignIn(_ref) {
     className: classes.submit,
     onClick: handleSubmit,
     label: "Submit"
-  }))));
-} // OffshoreSignIn.propTypes = {
-//   setToken: PropTypes.func.isRequired
-// }
+  }, "Submit"))));
+}

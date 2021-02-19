@@ -12,7 +12,7 @@ var _Button = _interopRequireDefault(require("./Button"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
-  title: 'Components/OffshoreButton',
+  title: 'UI/OffshoreButton',
   argTypes: {
     onClick: {
       action: 'clicked'
@@ -22,40 +22,35 @@ var _default = {
 exports.default = _default;
 
 var Default = function Default(args) {
-  return /*#__PURE__*/_react.default.createElement(_Button.default, args);
+  return /*#__PURE__*/_react.default.createElement(_Button.default, args, "Default");
 };
 
 exports.Default = Default;
 Default.args = {
-  label: 'Default',
   color: 'default'
 };
 
 var Primary = function Primary(args) {
-  return /*#__PURE__*/_react.default.createElement(_Button.default, args);
+  return /*#__PURE__*/_react.default.createElement(_Button.default, args, "Primary");
 };
 
 exports.Primary = Primary;
-Primary.args = {
-  label: 'Primary'
-};
+Primary.args = {};
 
 var Secondary = function Secondary(args) {
-  return /*#__PURE__*/_react.default.createElement(_Button.default, args);
+  return /*#__PURE__*/_react.default.createElement(_Button.default, args, "Secondary");
 };
 
 exports.Secondary = Secondary;
 Secondary.args = {
-  label: 'Secondary',
   color: 'secondary'
 };
 
 var Disabled = function Disabled(args) {
-  return /*#__PURE__*/_react.default.createElement(_Button.default, args);
+  return /*#__PURE__*/_react.default.createElement(_Button.default, args, "Disabled");
 };
 
 exports.Disabled = Disabled;
 Disabled.args = {
-  label: 'Disabled',
   disabled: true
 };

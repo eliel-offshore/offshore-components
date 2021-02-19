@@ -12,7 +12,7 @@ var _TextField = _interopRequireDefault(require("./TextField"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
-  title: 'Components/OffshoreTextField'
+  title: 'UI/OffshoreTextField'
 };
 exports.default = _default;
 

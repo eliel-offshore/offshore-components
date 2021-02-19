@@ -9,8 +9,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _Button = _interopRequireDefault(require("@material-ui/core/Button"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -27,7 +25,8 @@ function OffshoreButton(props) {
       _props$classes = props.classes,
       classes = _props$classes === void 0 ? '' : _props$classes,
       _props$disabled = props.disabled,
-      disabled = _props$disabled === void 0 ? false : _props$disabled;
+      disabled = _props$disabled === void 0 ? false : _props$disabled,
+      children = props.children;
   return /*#__PURE__*/_react.default.createElement(_Button.default, _extends({}, props, {
     type: type,
     variant: variant,
@@ -35,9 +34,5 @@ function OffshoreButton(props) {
     className: classes,
     disabled: disabled,
     onClick: onClick
-  }), label);
+  }), children);
 }
-
-OffshoreButton.propTypes = {
-  label: _propTypes.default.string.isRequired
-};
